@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>250 Dicas Premium CFC/FGV - Professor Moreira</title>
+<meta name="theme-color" content="#062a1b">
+<meta name="description" content="250 dicas premium de revisão final para o Exame de Suficiência CFC/FGV.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#02140d;color:#fff}
+body{
+  background:
+    radial-gradient(circle at top left,rgba(41,255,160,.25),transparent 28%),
+    radial-gradient(circle at bottom right,rgba(0,130,75,.30),transparent 32%),
+    linear-gradient(180deg,#02140d,#062a1b 45%,#03180f);
+}
+.app{max-width:430px;margin:0 auto;min-height:100vh;padding:14px 14px 96px;position:relative}
+.header{
+  padding:24px 16px 18px;
+  border-radius:30px;
+  background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 18px 45px rgba(0,0,0,.42);
+  backdrop-filter:blur(14px);
+  margin-bottom:14px;
+}
+.badge{display:inline-block;background:rgba(21,255,148,.16);border:1px solid rgba(21,255,148,.38);color:#bfffe0;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:800;margin-bottom:12px}
+h1{
+  font-size:30px;line-height:1.03;font-weight:1000;letter-spacing:-.6px;text-transform:uppercase;
+  color:#5b0000;
+  background:none;
+  -webkit-background-clip:initial;
+  -webkit-text-fill-color:#5b0000;
+  text-shadow:none;
+  margin-bottom:8px;
+}
+.sub{font-size:14px;color:rgba(255,255,255,.84);line-height:1.45}
+.progressWrap{height:16px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden;margin:16px 0 8px;border:1px solid rgba(255,255,255,.10)}
+.progress{height:100%;width:0%;background:linear-gradient(90deg,#20ff9b,#0fcf79,#049d5b);border-radius:999px;transition:width .35s ease}
+.status{display:flex;gap:8px;margin-top:12px}
+.pill{flex:1;text-align:center;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:9px 8px;font-size:12px;color:#d9ffec}
+.card{
+  min-height:390px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border-radius:32px;
+  padding:22px;
+  background:linear-gradient(160deg,rgba(255,255,255,.17),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 20px 60px rgba(0,0,0,.42);
+  backdrop-filter:blur(16px);
+  position:relative;overflow:hidden;
+  transition:opacity .24s ease, transform .24s ease;
+}
+.card::before{content:"";position:absolute;inset:-80px auto auto -80px;width:170px;height:170px;background:rgba(36,255,156,.18);filter:blur(8px);border-radius:50%}
+.topic{position:relative;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:rgba(5,26,16,.72);border:1px solid rgba(42,255,160,.35);color:#cffff0;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:900;margin-bottom:18px}
+.tipNumber{position:absolute;right:18px;top:18px;color:rgba(255,255,255,.42);font-weight:1000;font-size:32px}
+.tipText{position:relative;font-size:27px;line-height:1.24;font-weight:900;letter-spacing:-.4px;color:#fff;margin:26px 0;text-shadow:0 3px 16px rgba(0,0,0,.30)}
+.hint{position:relative;background:rgba(0,0,0,.22);border-left:4px solid #20ff9b;padding:13px 14px;border-radius:16px;color:#e8fff4;font-size:14px;line-height:1.45}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+button{border:0;border-radius:18px;padding:15px 12px;font-weight:900;font-size:15px;cursor:pointer;color:white;background:linear-gradient(135deg,#0fb66d,#05653d);box-shadow:0 10px 25px rgba(0,0,0,.25);transition:transform .18s,filter .18s}
+button:active{transform:scale(.98)} button:hover{filter:brightness(1.08)}
+.btnFull{grid-column:1/-1;background:linear-gradient(135deg,#113a2a,#061d14);border:1px solid rgba(255,255,255,.14)}
+.tools{display:grid;grid-template-columns:1fr;gap:9px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-top:12px;max-height:190px;overflow:auto;padding:2px}
+.dot{aspect-ratio:1/1;border-radius:10px;background:#5d655f;color:#fff;font-size:11px;padding:0;box-shadow:none}
+.dot.seen{background:#0fa667} .dot.current{outline:3px solid #fff;background:#20c77e;color:#001b10}
+.footer{
+  position:fixed;left:50%;bottom:0;transform:translateX(-50%);
+  width:100%;max-width:430px;
+  background:linear-gradient(180deg,rgba(2,20,13,.72),#02140d);
+  border-top:1px solid rgba(255,255,255,.12);
+  text-align:center;padding:13px 10px 15px;
+  color:#eafff4;font-size:13px;line-height:1.55;backdrop-filter:blur(12px)
+}
+.final{display:none;text-align:center;padding:24px;border-radius:28px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);margin-top:14px}
+.final h2{font-size:28px;margin-bottom:10px}
+.printOnly{display:none}
+@media(max-width:380px){h1{font-size:26px}.tipText{font-size:24px}.card{min-height:360px}}
+@media print{
+  body{background:#fff;color:#000}
+  .header,.card,.controls,.tools,.grid,.footer,.final{display:none!important}
+  .printOnly{display:block!important;color:#000;padding:20px;font-family:Arial,Helvetica,sans-serif}
+  .printOnly h1{-webkit-text-fill-color:#000;color:#000;background:none;text-shadow:none;font-size:22px;margin-bottom:12px}
+  .printTip{break-inside:avoid;border:1px solid #222;border-radius:12px;padding:10px;margin:8px 0}
+  .printTip b{display:block;margin-bottom:5px}
+  .semRespostas .explica{display:none}
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="header">
+    <div class="badge">📲 Revisão de véspera • CFC/FGV</div>
+    <h1>250 Dicas Premium</h1>
+    <div class="sub">Passe uma dica por vez, como um aplicativo de memorização acelerada. Baseado nos padrões mais repetidos das provas e no material enviado.</div>
+    <div class="progressWrap"><div class="progress" id="progress"></div></div>
+    <div class="status">
+      <div class="pill">📍 <span id="counter">1/250</span></div>
+      <div class="pill">⏱️ <span id="timer">00:00</span></div>
+      <div class="pill">✅ Vistas: <span id="seenCount">0</span></div>
+    </div>
+  </div>
+
+  <section class="card" id="card">
+    <div>
+      <div class="topic" id="topic">Tema</div>
+      <div class="tipNumber" id="tipNumber">01</div>
+      <div class="tipText" id="tipText">Carregando...</div>
+    </div>
+    <div class="hint" id="hint">💎 Dica premium para revisar rápido e lembrar na hora da prova.</div>
+  </section>
+
+  <div class="controls">
+    <button onclick="prevTip()">⬅ Voltar</button>
+    <button onclick="nextTip()">Próxima ➡</button>
+  </div>
+
+  <div class="tools">
+    <button class="btnFull" onclick="continueTip()">▶ Continuar de onde parou</button>
+    <button class="btnFull" onclick="restart()">🔄 Recomeçar Revisão</button>
+    <button class="btnFull" onclick="printWith()">🖨️ Imprimir PDF com dicas</button>
+    <button class="btnFull" onclick="printWithout()">📄 Imprimir PDF sem explicações</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="final" id="final">
+    <h2>🎉 Revisão concluída!</h2>
+    <p>Você passou pelas 250 dicas premium. Agora revise novamente as marcadas mentalmente como mais difíceis.</p>
+  </div>
+</div>
+
+<div class="printOnly" id="printArea"></div>
+
+<div class="footer">
+  <b>Curso de Contabilidade Professor Moreira</b><br>
+  WhatsApp: (61) 98532-3574
+</div>
+
+<script>
+const dicas = [
+  {
+    "titulo": "CPC 00",
+    "texto": "PL = Ativos − Passivos. A FGV ama chamar isso de participação residual."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Ativo não precisa ser físico. Precisa ser recurso econômico presente controlado."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Passivo não é obrigação futura: é obrigação presente de transferir recurso econômico."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Receita aumenta ativo ou reduz passivo, aumentando o PL, exceto aporte de sócios."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Despesa reduz ativo ou aumenta passivo, diminuindo o PL, exceto distribuição aos sócios."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Representação fidedigna exige três palavras: completa, neutra e isenta de erros."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Relevância existe quando a informação pode fazer diferença na decisão do usuário."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Valor preditivo ajuda o usuário a fazer previsões. Não precisa ser uma previsão pronta."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Valor confirmatório confirma ou altera avaliações feitas anteriormente."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Materialidade é aspecto da relevância: depende da natureza, magnitude ou ambas."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Comparabilidade permite identificar semelhanças e diferenças entre itens."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Consistência ajuda a comparabilidade: mesmos métodos ao longo do tempo."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Tempestividade é informação disponível a tempo de influenciar decisões."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Verificabilidade significa consenso entre observadores independentes e capacitados."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Compreensibilidade não autoriza retirar informação complexa relevante."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Relatórios são feitos para usuários com conhecimento razoável e análise diligente."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Prudência é cautela sob incerteza, sem superavaliar ativos/receitas nem subavaliar passivos/despesas."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Neutralidade não é falta de propósito. É ausência de viés na seleção e apresentação."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Custo é restrição geral da informação contábil: o benefício deve justificar o custo."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Continuidade presume que a entidade não pretende nem precisa liquidar ou encerrar."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Se a administração decide liquidar após o período e antes da autorização, não use continuidade."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Demonstrações consolidadas mostram controladora e controladas como uma única entidade que reporta."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Usuários principais: investidores, credores por empréstimos e outros credores."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Administração não é usuário principal porque pode obter informações internamente."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Relatório financeiro geral não fornece tudo: usuários precisam considerar outras fontes."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Relatório financeiro não serve para mostrar o valor exato da empresa."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "A entidade que reporta é o ponto de vista das demonstrações, não o ponto de vista dos sócios."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Reconhecimento exige que o item atenda à definição de elemento e gere informação útil."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Desreconhecimento ocorre quando ativo ou passivo deixa de atender à definição."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Perder o controle de um bem é causa típica de desreconhecimento do ativo."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Ativo tem potencial de benefício mesmo se a entrada de benefício não for provável."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Para existir potencial econômico, basta que em ao menos uma circunstância gere benefício."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Direito de usar propriedade intelectual pode ser ativo sem obrigação de outra parte."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Direito de influenciar decisões estratégicas, sozinho, não é ativo reconhecido."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Valor justo e valor realizável são bases ligadas a valores de saída."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Custo histórico pode ser ajustado por consumo, pagamentos, juros e perda de recuperabilidade."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Manutenção do capital financeiro exclui contribuições e distribuições aos sócios."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Conceito de capital deve seguir as necessidades dos usuários das demonstrações."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Se Pronunciamento específico divergir da Estrutura Conceitual, aplica-se o Pronunciamento específico."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "A Estrutura Conceitual ajuda a criar normas com conceitos consistentes."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Normas de qualidade aumentam transparência, prestação de contas e eficiência."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Linguagem contábil única e confiável pode reduzir custo de capital."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Informação falsa divulgada ao mercado fere representação fidedigna."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Sem demonstrações anteriores, fica prejudicada a comparabilidade."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Baixar estoque perdido rapidamente pode privilegiar tempestividade."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Esperar demais para reconhecer multa certa pode ferir tempestividade."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Comparativo de pelo menos um período anterior ajuda a avaliar tendências."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Estimativas razoáveis são parte normal da informação financeira."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Uso de estimativa exige explicação clara quando relevante."
+  },
+  {
+    "titulo": "CPC 00",
+    "texto": "Informação útil precisa ser relevante e representar fidedignamente o fenômeno."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Conjunto completo inclui BP, DRE, DRA, DMPL, DFC, notas e comparativos."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Demonstrações devem apresentar adequadamente posição patrimonial, desempenho e fluxos de caixa."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Materialidade decide o nível de agregação ou detalhamento das informações."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Não compense ativos e passivos, receitas e despesas, salvo quando norma permitir."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Classificação circulante depende de realização, venda, consumo ou liquidação no ciclo operacional."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Passivo é circulante quando deve ser liquidado em até 12 meses ou no ciclo operacional."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Ativo mantido para negociação costuma ser circulante."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Dívida exigível em até 12 meses é circulante, salvo direito incondicional de diferir."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Notas explicativas completam, detalham e explicam as demonstrações."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Informação imaterial não precisa ser divulgada só porque uma norma lista a divulgação."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "DRA mostra outros resultados abrangentes, não realizados diretamente no resultado."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Resultado do período é diferente de resultado abrangente total."
+  },
+  {
+    "titulo": "NBC TG 26",
+    "texto": "Apresentação consistente deve ser mantida, salvo mudança relevante ou exigência normativa."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "Receita bruta não é lucro. Primeiro entram deduções, custos e despesas."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "CMV reduz o resultado bruto, não é despesa operacional."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "Lucro bruto = Receita líquida − Custo das vendas."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "Despesa financeira não entra no lucro bruto."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "DRE é regime de competência, não regime de caixa."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "Venda a prazo gera receita mesmo antes do recebimento, se critérios forem atendidos."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "Desconto comercial normalmente reduz a receita de vendas."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "Despesa administrativa não compõe custo do produto vendido."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "Resultado antes dos tributos vem antes de IR e CSLL."
+  },
+  {
+    "titulo": "DRE",
+    "texto": "Ganhos e perdas podem aparecer no resultado quando aumentam ou reduzem benefícios econômicos."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "DFC mostra entradas e saídas de caixa e equivalentes de caixa."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "DFC tem três blocos: operacional, investimento e financiamento."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Compra de imobilizado é fluxo de investimento."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Empréstimo recebido é fluxo de financiamento."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Pagamento de empréstimo principal é financiamento."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Recebimento de clientes é operacional."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Pagamento a fornecedores é operacional."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Dividendos pagos podem ser financiamento, conforme política adotada."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Juros pagos podem ser operacional ou financiamento, conforme norma e política."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Juros recebidos podem ser operacional ou investimento."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Método indireto parte do lucro e ajusta itens sem caixa e variações operacionais."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Depreciação é somada no método indireto porque reduziu o lucro sem sair caixa."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Aumento de estoques consome caixa no método indireto."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Aumento de fornecedores gera caixa no método indireto."
+  },
+  {
+    "titulo": "DFC",
+    "texto": "Lucro na venda de imobilizado é ajustado no método indireto."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "DMPL mostra mutações do patrimônio líquido."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "Integralização de capital aumenta PL, mas não é receita."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "Dividendos diminuem PL, mas não são despesa."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "Reserva legal é destinação do lucro, não despesa."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "Ações em tesouraria reduzem o patrimônio líquido."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "Ajustes de avaliação patrimonial ficam no PL enquanto não realizados conforme norma."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "DVA evidencia a riqueza gerada e sua distribuição."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "Valor adicionado inclui riqueza distribuída a empregados, governo, financiadores e sócios."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "DVA não substitui DRE: ela mostra distribuição da riqueza, não apuração do lucro."
+  },
+  {
+    "titulo": "DMPL e DVA",
+    "texto": "Juros sobre capital próprio aparecem na distribuição da riqueza na DVA."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Imobilizado é ativo tangível usado na produção, fornecimento, aluguel ou administração."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Imobilizado deve ser usado por mais de um período."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Custo inicial inclui preço de compra e gastos diretamente atribuíveis."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Frete e instalação necessários entram no custo do imobilizado."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Treinamento de pessoal geralmente não entra no custo do imobilizado."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Manutenção comum é despesa do período."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Gasto que aumenta benefícios futuros pode ser capitalizado."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Depreciação começa quando o ativo está disponível para uso."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Depreciação não depende de o ativo estar gerando receita."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Valor residual reduz a base depreciável."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Vida útil é estimativa e deve ser revisada."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Método de depreciação deve refletir o padrão de consumo dos benefícios."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Terreno normalmente não deprecia, salvo exceções como mina ou aterro."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Venda de imobilizado gera baixa do custo e da depreciação acumulada."
+  },
+  {
+    "titulo": "CPC 27 - Imobilizado",
+    "texto": "Ganho ou perda na venda vai ao resultado."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Impairment é perda por desvalorização quando valor contábil excede valor recuperável."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Valor recuperável é o maior entre valor justo líquido de despesas de venda e valor em uso."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Valor em uso considera fluxos de caixa futuros descontados."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Teste de recuperabilidade protege contra ativo superavaliado."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Indício externo: queda relevante no valor de mercado."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Indício interno: obsolescência, dano físico ou pior desempenho."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Perda por impairment normalmente vai ao resultado."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Reversão de impairment é possível, exceto para ágio por expectativa de rentabilidade futura."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Unidade geradora de caixa é o menor grupo que gera entradas independentes."
+  },
+  {
+    "titulo": "CPC 01 - Impairment",
+    "texto": "Se não dá para testar ativo isolado, testa-se a UGC."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Ativo não circulante mantido para venda deve estar disponível para venda imediata."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "A venda deve ser altamente provável."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Ativo mantido para venda é mensurado pelo menor entre valor contábil e valor justo menos despesas de venda."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Após classificar como mantido para venda, o ativo deixa de ser depreciado."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Plano de venda deve estar comprometido e ativo deve ser anunciado por preço razoável."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Venda esperada normalmente deve ocorrer em até um ano."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Operação descontinuada é componente baixado ou classificado como mantido para venda e representa linha separada importante."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Resultado de operação descontinuada é apresentado separadamente."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Nem todo ativo que a empresa quer vender vira CPC 31: precisa atender aos critérios."
+  },
+  {
+    "titulo": "CPC 31",
+    "texto": "Ativo abandonado não é automaticamente mantido para venda."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Estoque é ativo mantido para venda, em produção ou em materiais a consumir na produção."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Estoque é mensurado pelo menor entre custo e valor realizável líquido."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Valor realizável líquido é preço estimado de venda menos custos para concluir e vender."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Frete de compra pode entrar no custo do estoque."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Frete de venda normalmente é despesa de venda."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Perdas anormais de materiais, mão de obra ou produção são despesa."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "PEPS é permitido; UEPS não é permitido no CPC 16."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Custo médio ponderado é critério aceito."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Estoque vendido vira despesa como CMV."
+  },
+  {
+    "titulo": "CPC 16 - Estoques",
+    "texto": "Redução ao valor realizável líquido é reconhecida como despesa."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Intangível é ativo não monetário identificável sem substância física."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Ser separável ou decorrer de direito contratual ajuda a identificar intangível."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Marca gerada internamente geralmente não é reconhecida como intangível."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Pesquisa é despesa; desenvolvimento pode ser ativo se cumprir critérios."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Intangível com vida útil definida é amortizado."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Intangível com vida útil indefinida não é amortizado, mas testa impairment."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Software pode ser intangível quando não faz parte inseparável do hardware."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Goodwill gerado internamente não é reconhecido."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Amortização começa quando o ativo está disponível para uso."
+  },
+  {
+    "titulo": "Intangível",
+    "texto": "Vida útil indefinida não significa vida infinita."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Equivalência patrimonial é aplicada, em regra, a investimento em coligada, controlada e empreendimento controlado em conjunto."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Coligada envolve influência significativa, não controle."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Influência significativa presume-se com 20% ou mais do poder de voto, salvo prova contrária."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "No MEP, lucro da investida aumenta o investimento."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Dividendos recebidos da investida reduzem o investimento no MEP."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Ágio por rentabilidade futura integra o valor contábil do investimento."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Elimine lucros não realizados em transações entre investidor e investida quando aplicável."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Controle é poder de dirigir políticas relevantes e obter benefícios."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Controlada entra na consolidação."
+  },
+  {
+    "titulo": "Equivalência Patrimonial",
+    "texto": "Participação sem influência significativa tende a instrumento financeiro, não MEP."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Objetivo da auditoria independente é aumentar o grau de confiança nas demonstrações."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Auditor emite opinião, não garante ausência total de erro."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Risco de auditoria é o risco de emitir opinião inadequada."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Risco de distorção relevante existe antes dos procedimentos do auditor."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Risco de detecção depende dos procedimentos do auditor."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Evidência apropriada é relevante e confiável."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Evidência suficiente está ligada à quantidade."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Materialidade orienta planejamento, execução e avaliação das distorções."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Controle interno é responsabilidade da administração, não do auditor."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Independência é requisito essencial do auditor."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Opinião sem ressalva é emitida quando as demonstrações estão adequadas em todos os aspectos relevantes."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Ressalva ocorre quando o efeito é relevante, mas não generalizado."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Opinião adversa ocorre quando distorções são relevantes e generalizadas."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Abstenção ocorre quando limitação é relevante e generalizada."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Procedimentos analíticos comparam relações plausíveis entre dados."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Confirmação externa é evidência obtida diretamente de terceiro."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Inspeção examina registros, documentos ou ativos."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Observação acompanha processo executado por outros."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Recálculo verifica exatidão matemática."
+  },
+  {
+    "titulo": "Auditoria",
+    "texto": "Reexecução refaz procedimento ou controle."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Contador deve atuar com integridade, objetividade, competência profissional, sigilo e comportamento profissional."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Sigilo profissional permanece mesmo após o fim da relação com o cliente."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Objetividade exige não permitir viés, conflito de interesse ou influência indevida."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Competência exige conhecimento técnico atualizado e zelo profissional."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Integridade exige honestidade e retidão."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Comportamento profissional exige cumprir leis e evitar condutas que desabonem a profissão."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Ameaça de interesse próprio pode comprometer julgamento profissional."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Ameaça de familiaridade surge por relacionamento próximo demais com cliente."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Ameaça de intimidação surge por pressão real ou percebida."
+  },
+  {
+    "titulo": "Ética",
+    "texto": "Salvaguardas reduzem ameaças a nível aceitável."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Perícia contábil produz prova técnica para subsidiar decisão."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Perito do juízo é nomeado pelo juiz."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Assistente técnico é indicado pelas partes."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Laudo pericial é elaborado pelo perito do juízo."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Parecer técnico é elaborado pelo assistente técnico."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Perito deve ser independente, imparcial e tecnicamente habilitado."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Quesitos orientam os pontos a serem respondidos na perícia."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Diligência é ato de buscar documentos, informações e evidências."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Perito não decide o processo; ele esclarece tecnicamente os fatos."
+  },
+  {
+    "titulo": "Perícia",
+    "texto": "Conclusão pericial deve ser fundamentada em evidências."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "PCASP padroniza registros contábeis no setor público."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Receita orçamentária passa por previsão, lançamento, arrecadação e recolhimento."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Despesa orçamentária passa por fixação, empenho, liquidação e pagamento."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Empenho cria obrigação orçamentária para o Estado."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Liquidação verifica o direito adquirido pelo credor."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Pagamento é a saída financeira ao credor."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Previsão da receita é natureza orçamentária."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Arrecadação não é receita extraordinária: é estágio da receita."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Dotação da despesa é natureza orçamentária."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Variação patrimonial aumentativa aumenta a situação patrimonial líquida."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Variação patrimonial diminutiva diminui a situação patrimonial líquida."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Restos a pagar são despesas empenhadas e não pagas até 31 de dezembro."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Suprimento de fundos é adiantamento para despesas que não seguem o processo normal."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Balanço Orçamentário compara receitas e despesas previstas/fixadas com executadas."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Balanço Financeiro evidencia ingressos e dispêndios financeiros."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Balanço Patrimonial evidencia ativos, passivos e patrimônio líquido público."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "DFC pública evidencia geração e utilização de caixa e equivalentes."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Regime orçamentário da receita é arrecadação; da despesa é empenho."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Regime patrimonial segue competência."
+  },
+  {
+    "titulo": "Contabilidade Pública",
+    "texto": "Crédito adicional altera a lei orçamentária durante a execução."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custo é gasto ligado à produção de bens ou serviços."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Despesa é gasto ligado à administração, vendas ou financiamento."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custo direto é identificado diretamente ao produto."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custo indireto precisa de rateio."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custo fixo total não muda com o volume dentro da faixa relevante."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custo variável total muda conforme o volume produzido."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custo fixo unitário cai quando a produção aumenta."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custo variável unitário tende a permanecer constante."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Margem de contribuição = Preço de venda − Custos e despesas variáveis."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Ponto de equilíbrio contábil = Custos fixos ÷ Margem de contribuição unitária."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Margem de segurança mostra quanto as vendas podem cair antes do prejuízo."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custeio por absorção inclui custos fixos e variáveis no produto."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Custeio variável leva custos fixos ao resultado do período."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "ABC rastreia custos por atividades."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Direcionador de custo explica o consumo de atividades."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Produção equivalente transforma unidades em processamento em unidades completas equivalentes."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Perda normal integra o custo; perda anormal vai ao resultado."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Departamentalização melhora o rateio dos custos indiretos."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "CPV = EI + Compras/produção − EF, adaptado ao contexto."
+  },
+  {
+    "titulo": "Custos",
+    "texto": "Quanto maior a margem de contribuição, menor tende a ser o ponto de equilíbrio."
+  },
+  {
+    "titulo": "Matemática Financeira",
+    "texto": "Juros simples incidem sempre sobre o capital inicial."
+  },
+  {
+    "titulo": "Matemática Financeira",
+    "texto": "Juros compostos incidem sobre capital mais juros acumulados."
+  },
+  {
+    "titulo": "Matemática Financeira",
+    "texto": "Taxa efetiva considera capitalização; taxa nominal precisa ser convertida."
+  },
+  {
+    "titulo": "Matemática Financeira",
+    "texto": "120% ao ano com capitalização mensal equivale a 10% ao mês nominal."
+  },
+  {
+    "titulo": "Matemática Financeira",
+    "texto": "Valor presente traz fluxos futuros para a data zero."
+  },
+  {
+    "titulo": "Matemática Financeira",
+    "texto": "Valor futuro leva valores atuais para uma data futura."
+  },
+  {
+    "titulo": "Matemática Financeira",
+    "texto": "Prestações postecipadas começam no fim do primeiro período."
+  }
+];
+
+let atual = Number(localStorage.getItem("dicaAtualPremium") || 0);
+let vistos = JSON.parse(localStorage.getItem("dicasVistasPremium") || "[]");
+let segundos = Number(localStorage.getItem("tempoDicasPremium") || 0);
+
+const topic = document.getElementById("topic");
+const tipText = document.getElementById("tipText");
+const tipNumber = document.getElementById("tipNumber");
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+const seenCount = document.getElementById("seenCount");
+const card = document.getElementById("card");
+
+function save(){
+  localStorage.setItem("dicaAtualPremium", atual);
+  localStorage.setItem("dicasVistasPremium", JSON.stringify(vistos));
+  localStorage.setItem("tempoDicasPremium", segundos);
+}
+
+function render(){
+  const d = dicas[atual];
+  card.style.opacity = 0;
+  card.style.transform = "translateX(10px)";
+  setTimeout(() => {
+    topic.textContent = "💡 " + d.titulo;
+    tipText.textContent = d.texto;
+    tipNumber.textContent = String(atual + 1).padStart(2, "0");
+    counter.textContent = (atual + 1) + "/" + dicas.length;
+    progress.style.width = (((atual + 1) / dicas.length) * 100) + "%";
+    if(!vistos.includes(atual)) vistos.push(atual);
+    seenCount.textContent = vistos.length;
+    renderGrid();
+    save();
+    card.style.opacity = 1;
+    card.style.transform = "translateX(0)";
+  }, 130);
+}
+
+function renderGrid(){
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  dicas.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.className = "dot" + (vistos.includes(i) ? " seen" : "") + (i === atual ? " current" : "");
+    b.textContent = i + 1;
+    b.onclick = () => { atual = i; render(); };
+    grid.appendChild(b);
+  });
+}
+
+function nextTip(){
+  if(atual < dicas.length - 1) {
+    atual++;
+    render();
+  } else {
+    document.getElementById("final").style.display = "block";
+    window.scrollTo({top: document.body.scrollHeight, behavior:"smooth"});
+  }
+}
+
+function prevTip(){
+  if(atual > 0) {
+    atual--;
+    render();
+  }
+}
+
+function continueTip(){
+  atual = Number(localStorage.getItem("dicaAtualPremium") || 0);
+  render();
+}
+
+function restart(){
+  if(confirm("Deseja recomeçar a revisão do zero?")) {
+    atual = 0; vistos = []; segundos = 0; save(); render();
+  }
+}
+
+function buildPrint(className){
+  const area = document.getElementById("printArea");
+  area.className = "printOnly " + className;
+  area.innerHTML = `<h1>250 Dicas Premium CFC/FGV</h1>
+  <p><b>Curso de Contabilidade Professor Moreira</b><br>WhatsApp: (61) 98532-3574</p><br>` +
+  dicas.map((d,i)=>`<div class="printTip"><b>${i+1}. ${d.titulo}</b><div>${d.texto}</div><div class="explica">💎 Revisão rápida: leia, memorize e passe para a próxima.</div></div>`).join("");
+}
+
+function printWith(){
+  buildPrint("");
+  window.print();
+}
+
+function printWithout(){
+  buildPrint("semRespostas");
+  window.print();
+}
+
+setInterval(() => {
+  segundos++;
+  const m = String(Math.floor(segundos/60)).padStart(2,"0");
+  const s = String(segundos%60).padStart(2,"0");
+  document.getElementById("timer").textContent = `${m}:${s}`;
+  if(segundos % 5 === 0) save();
+}, 1000);
+
+// PWA/offline em arquivo único: registra service worker gerado por Blob quando possível.
+if("serviceWorker" in navigator){
+  const sw = `
+    self.addEventListener('install', e => self.skipWaiting());
+    self.addEventListener('activate', e => self.clients.claim());
+    self.addEventListener('fetch', e => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
+  `;
+  const blob = new Blob([sw], {type:"text/javascript"});
+  const swUrl = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(swUrl).catch(()=>{});
+}
+
+render();
+</script>
+</body>
+</html>
